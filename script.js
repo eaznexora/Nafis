@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="contact-list">
           <div class="contact-item" data-type="Email">📧 <strong>Email</strong><br><span>Click to compose</span></div>
           <div class="contact-item" data-type="linkedin">🔗 <strong>LinkedIn</strong><br><span>Mohammad Nafis Ansari</span></div>
-          <div class="contact-item" data-type="Eaz Nexora">💻 <strong>GitHub</strong><br><span>Company Website</span></div>
+          <div class="contact-item" data-type="Eaz Nexora">💻 <strong>Website</strong><br><span>Company Website</span></div>
         </div>`
     },
     review: {
