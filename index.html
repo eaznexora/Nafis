@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nafis | Eaz Nexora</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Fullscreen video background -->
+  <video autoplay muted playsinline id="bg-video"
+    style="position: fixed; top: 0; left: 0; min-width: 100vw; min-height: 100vh; object-fit: cover; z-index: -1; filter: brightness(1.2);">
+    <source id="videoSource" src="./assets/videos/desktop.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Typing Effect Section -->
+  <div class="typing-container glowing">
+    <div class="glitch-wrapper">
+      <div class="glitch-container" id="glitchText"></div>
+    </div>
+  </div>
+
+  <!-- Main Terminal Section -->
+  <div class="terminal" id="terminal" style="display: none;">
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <span class="btn red"></span>
+        <span class="btn yellow"></span>
+        <span class="btn green"></span>
+      </div>
+      <div class="terminal-title">Welcome to Mohammad Nafis Ansari Portfolio</div>
+    </div>
+
+    <div class="intro-text">
+      <div class="line">&gt; Hi! My name is Mohammad Nafis Ansari.</div>
+      <div class="line">&gt; Do you want to know more about me? Type a command below.</div>
+      <div class="line">&gt; <strong>Available commands:</strong>
+        <span class="highlight">about</span> |
+        <span class="highlight">skills</span> |
+        <span class="highlight">projects</span> |
+        <span class="highlight">education</span> |
+        <span class="highlight">contact</span> |
+        <span class="highlight">review</span> |
+        <span class="highlight">clear</span>
+      </div>
+    </div>
+
+    <!-- Output & Command Input -->
+    <div class="content">
+      <div id="output"></div>
+      <div class="command-area">
+        <span class="prompt">></span>
+        <input type="text" id="commandInput" autocomplete="off" autofocus />
+        <div id="suggestion-box" class="suggestion-box"></div>
+      </div>
+
+      <!-- Hidden Feedback Form Container -->
+      <div id="reviewFormContainer" style="display: none;">
+        <form id="reviewForm">
+          <label for="user">Name *</label>
+          <input type="text" id="user" name="user" placeholder="Your Name" required />
+
+          <label for="first-impression">First Impression *</label>
+          <input type="text" id="first-impression" name="first-impression" placeholder="Your first impression" required />
+
+          <label for="design-rating">Design Rating (1-5) *</label>
+          <input type="number" id="design-rating" name="design-rating" min="1" max="5" required />
+
+          <label for="feedback">Feedback *</label>
+          <textarea id="feedback" name="feedback" placeholder="Your feedback" required></textarea>
+
+          <label for="features">Features You'd Like to See</label>
+          <input type="text" id="features" name="features" placeholder="Optional" />
+
+          <label for="would-recommend">Would You Recommend? *</label>
+          <select id="would-recommend" name="would-recommend" required>
+            <option value="">-- Select --</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kali-style Terminal Popup -->
+  <div id="terminalPopup" style="display: none;">
+    <div class="popup-header">
+      <div class="window-controls">
+        <span class="minimize"></span>
+        <span class="maximize"></span>
+        <span class="close" id="closePopup"></span>
+      </div>
+      <span class="title-text">kali@Nafis-Portfolio:~$</span>
+    </div>
+    <div class="popup-body" id="popupBody"></div>
+    <div class="popup-footer"></div>
+  </div>
+
+  <!-- Feedback Animation Popup -->
+  <div id="feedbackPopup" class="feedback-popup hidden">
+    <div class="popup-inner">
+      <span id="typingMessage" class="glitch-text"></span>
+    </div>
+  </div>
+
+  <!-- Extra fallback / noscript -->
+  <noscript>
+    <div style="background: black; color: lime; padding: 1rem; text-align: center;">
+      This portfolio requires JavaScript to function properly. Please enable JavaScript in your browser settings.
+    </div>
+  </noscript>
+
+  <div class="contact"></div>
+
+  <!-- Mobile Video Swap Script -->
+  <script>
+    const video = document.getElementById('bg-video');
+    const source = document.getElementById('videoSource');
+
+    if (window.innerWidth <= 768) {
+      source.src = './assets/videos/mobile.mp4';
+      video.load();
+    }
+  </script>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>
